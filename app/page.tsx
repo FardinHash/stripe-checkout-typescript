@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Home | Next.js + TypeScript Example",
+  title: "Home | Stripe Checkout",
 };
 
 export default function IndexPage(): JSX.Element {

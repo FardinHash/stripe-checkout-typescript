@@ -37,11 +37,6 @@ export default function RootLayout({ children }: LayoutProps) {
               <Link href="/" className="logo">
                 <img src="/logo.png" />
               </Link>
-              <h1>
-                <span className="light">Stripe Sample</span>
-                <br />
-                Next.js, TypeScript, and Stripe 🔒💸
-              </h1>
             </div>
           </header>
           {children}

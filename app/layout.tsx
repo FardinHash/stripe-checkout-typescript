@@ -49,11 +49,11 @@ export default function RootLayout({ children }: LayoutProps) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Stripe Sample
+              Sample Stripe Checkout
             </a>
             .{" View code on "}
             <a
-              href="https://github.com/vercel/next.js/tree/canary/examples/with-stripe-typescript"
+              href="https://github.com/FardinHash/stripe-checkout-typescript"
               target="_blank"
               rel="noopener noreferrer"
             >

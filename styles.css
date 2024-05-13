@@ -146,12 +146,11 @@ input[type="tel"] {
   padding: 5px 12px;
   width: 100%;
   background: #fff;
-  appearance: none;
   font-size: 16px;
   margin-top: 10px;
 }
 
-input[type="range"] {
+input[type="text"] {
   margin: 5px 0;
   width: 100%;
 }

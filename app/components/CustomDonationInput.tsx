@@ -35,14 +35,14 @@ export default function CustomDonationInput({
           type="text"
           name="companyName"
           value={companyName}
-          onChange={onChange}
+          onChange={(e) => onChange(e)} // Add onChange handler here
           required
         />
       </label>
       <label>
         Phone No.:
         <input
-          type="tel"
+          type="number"
           name="phoneNo"
           value={phoneNo}
           onChange={onChange}

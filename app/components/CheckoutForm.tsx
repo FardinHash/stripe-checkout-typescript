@@ -27,13 +27,12 @@ export default function CheckoutForm(props: CheckoutFormProps): JSX.Element {
   });
   const [clientSecret, setClientSecret] = useState<string | null>(null);
 
-  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (
-    e,
-  ): void =>
+  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setInput({
       ...input,
       [e.currentTarget.name]: e.currentTarget.value,
     });
+  };  
 
   const formAction = async (data: FormData): Promise<void> => {
     const uiMode = data.get(
@@ -58,7 +57,9 @@ export default function CheckoutForm(props: CheckoutFormProps): JSX.Element {
           step={config.AMOUNT_STEP}
           currency={config.CURRENCY}
           onChange={handleInputChange}
-          value={input.customDonation} companyName={""}        />
+          value={input.customDonation}
+          companyName={""} 
+        />
         <StripeTestCards />
         <button
           className="checkout-style-background"

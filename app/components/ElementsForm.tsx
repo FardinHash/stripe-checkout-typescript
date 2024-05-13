@@ -68,7 +68,7 @@ function CheckoutForm(): JSX.Element {
       ...input,
       [e.currentTarget.name]: e.currentTarget.value,
     });
-  };  
+  };     
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     try {

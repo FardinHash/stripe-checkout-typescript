@@ -22,9 +22,11 @@ function CheckoutForm(): JSX.Element {
   const [input, setInput] = React.useState<{
     customDonation: number;
     cardholderName: string;
+    companyName: string; 
   }>({
     customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
     cardholderName: "",
+    companyName: "",
   });
   const [paymentType, setPaymentType] = React.useState<string>("");
   const [payment, setPayment] = React.useState<{
@@ -66,9 +68,7 @@ function CheckoutForm(): JSX.Element {
       ...input,
       [e.currentTarget.name]: e.currentTarget.value,
     });
-
-    elements?.update({ amount: input.customDonation * 100 });
-  };
+  };  
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     try {
@@ -122,16 +122,17 @@ function CheckoutForm(): JSX.Element {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <CustomDonationInput
-          className="elements-style"
-          name="customDonation"
-          value={input.customDonation}
-          min={config.MIN_AMOUNT}
-          max={config.MAX_AMOUNT}
-          step={config.AMOUNT_STEP}
-          currency={config.CURRENCY}
-          onChange={handleInputChange}
-        />
+      <CustomDonationInput
+        className="elements-style"
+        name="customDonation"
+        value={input.customDonation}
+        min={config.MIN_AMOUNT}
+        max={config.MAX_AMOUNT}
+        step={config.AMOUNT_STEP}
+        currency={config.CURRENCY}
+        onChange={handleInputChange}
+        companyName={input.companyName} 
+      />
         <StripeTestCards />
         <fieldset className="elements-style">
           <legend>Your payment details:</legend>

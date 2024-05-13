@@ -115,9 +115,11 @@ li {
   text-decoration: none;
   box-shadow: -20px 20px 60px #abacad, 20px -20px 60px #ffffff;
 }
+
 .card h2 {
   color: #fff;
 }
+
 .card h2.bottom {
   position: absolute;
   bottom: 10px;
@@ -138,7 +140,8 @@ li {
 .FormRow,
 fieldset,
 input[type="number"],
-input[type="text"] {
+input[type="text"],
+input[type="tel"] {
   border-radius: var(--radius);
   padding: 5px 12px;
   width: 100%;
@@ -166,6 +169,7 @@ button {
   display: block;
   width: 100%;
 }
+
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -175,21 +179,26 @@ button:disabled {
   color: var(--elements-color);
   border: 1px solid var(--elements-color);
 }
+
 .elements-style-background {
   background: var(--elements-color);
   transition: box-shadow var(--transition-duration);
 }
+
 .card.elements-style-background:hover {
   box-shadow: 20px 20px 60px #464e9c, -20px -20px 60px #8896ff;
 }
+
 .checkout-style {
   color: var(--checkout-color);
   border: 1px solid var(--checkout-color);
 }
+
 .checkout-style-background {
   background: var(--checkout-color);
   transition: box-shadow var(--transition-duration);
 }
+
 .card.checkout-style-background:hover {
   box-shadow: 20px 20px 60px #614b91, -20px -20px 60px #bd91ff;
 }
@@ -202,6 +211,7 @@ button:disabled {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
+
 .card-number {
   display: inline;
   white-space: nowrap;
@@ -209,6 +219,7 @@ button:disabled {
   color: #3c4257;
   font-weight: 500;
 }
+
 .card-number span {
   display: inline-block;
   width: 4px;

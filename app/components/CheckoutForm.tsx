@@ -58,8 +58,7 @@ export default function CheckoutForm(props: CheckoutFormProps): JSX.Element {
           step={config.AMOUNT_STEP}
           currency={config.CURRENCY}
           onChange={handleInputChange}
-          value={input.customDonation}
-        />
+          value={input.customDonation} companyName={""}        />
         <StripeTestCards />
         <button
           className="checkout-style-background"

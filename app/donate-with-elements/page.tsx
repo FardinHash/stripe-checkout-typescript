@@ -14,7 +14,7 @@ export default function PaymentElementPage({
   return (
     <div className="page-container">
       <h1>Donate with Elements</h1>
-      <p>Donate to our project 💖</p>
+      <p>Donate to our project </p>
       <ElementsForm />
     </div>
   );

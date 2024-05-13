@@ -14,7 +14,7 @@ export default function IndexPage(): JSX.Element {
           href="/donate-with-embedded-checkout"
           className="card checkout-style-background"
         >
-          <h2 className="bottom">Donate with embedded Checkout</h2>
+          <h2 className="bottom">Basic Plan</h2>
           <img src="/checkout-one-time-payments.svg" />
         </Link>
       </li>
@@ -23,7 +23,7 @@ export default function IndexPage(): JSX.Element {
           href="/donate-with-checkout"
           className="card checkout-style-background"
         >
-          <h2 className="bottom">Donate with hosted Checkout</h2>
+          <h2 className="bottom">Pro Plan</h2>
           <img src="/checkout-one-time-payments.svg" />
         </Link>
       </li>
@@ -32,7 +32,7 @@ export default function IndexPage(): JSX.Element {
           href="/donate-with-elements"
           className="card elements-style-background"
         >
-          <h2 className="bottom">Donate with Elements</h2>
+          <h2 className="bottom">Agency</h2>
           <img src="/elements-card-payment.svg" />
         </Link>
       </li>

@@ -14,7 +14,7 @@ export async function createCheckoutSession(
   ) as Stripe.Checkout.SessionCreateParams.UiMode;
 
   const origin: string = headers().get("origin") as string;
-  const couponCode = data.get("couponCode") as string; // New line to get coupon code
+  const couponCode = data.get("couponCode") as string;
 
   const checkoutSession: Stripe.Checkout.Session =
     await stripe.checkout.sessions.create({

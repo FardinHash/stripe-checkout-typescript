@@ -32,10 +32,10 @@ export default function RootLayout({ children }: LayoutProps) {
     <html lang="en">
       <body>
         <div className="container">
-          <header>
+        <header>
             <div className="header-content">
-              <Link href="/" className="logo">
-                <img src="/logo.png" />
+              <Link href="/" className="logo" style={{ fontWeight: 'bold', fontSize: '1.2em' }}>
+                SENDOUT.AI
               </Link>
             </div>
           </header>

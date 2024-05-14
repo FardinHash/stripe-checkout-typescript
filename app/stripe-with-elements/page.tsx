@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import ElementsForm from "@/components/ElementsForm";
 
 export const metadata: Metadata = {
-  title: "Donate with Elements",
+  title: "Payment with Stripe Elements",
 };
 
 export default function PaymentElementPage({
@@ -13,8 +13,8 @@ export default function PaymentElementPage({
 }): JSX.Element {
   return (
     <div className="page-container">
-      <h1>Donate with Elements</h1>
-      <p>Donate to our project </p>
+      <h1>Payment with Stripe Elements</h1>
+      <p>Payment to your plan </p>
       <ElementsForm />
     </div>
   );

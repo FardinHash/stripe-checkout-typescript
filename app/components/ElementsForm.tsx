@@ -10,7 +10,7 @@ import {
   Elements,
 } from "@stripe/react-stripe-js";
 
-import CustomDonationInput from "./CustomDonationInput";
+import PaymentInput from "./PaymentInput";
 import StripeTestCards from "./StripeTestCards";
 
 import { formatAmountForDisplay } from "@/utils/stripe-helpers";
@@ -98,7 +98,7 @@ function CheckoutForm(): JSX.Element {
         elements,
         clientSecret,
         confirmParams: {
-          return_url: `${window.location.origin}/donate-with-elements/result`,
+          return_url: `${window.location.origin}/stripe-with-elements/result`,
           payment_method_data: {
             billing_details: {
               name: input.cardholderName,
@@ -122,7 +122,7 @@ function CheckoutForm(): JSX.Element {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <CustomDonationInput
+        <PaymentInput
           className="elements-style"
           name="customDonation"
           value={input.customDonation}

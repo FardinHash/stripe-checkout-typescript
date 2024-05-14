@@ -37,11 +37,8 @@ export async function createCheckoutSession(
         },
       ],
       ...(ui_mode === "hosted" && {
-        success_url: `${origin}/donate-with-checkout/result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${origin}/donate-with-checkout`,
-      }),
-      ...(ui_mode === "embedded" && {
-        return_url: `${origin}/donate-with-embedded-checkout/result?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${origin}/stripe-checkout/result?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${origin}/stripe-checkout`,
       }),
       ui_mode,
     });

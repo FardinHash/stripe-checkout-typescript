@@ -4,7 +4,7 @@ import type Stripe from "stripe";
 
 import React, { useState } from "react";
 
-import CustomDonationInput from "@/components/CustomDonationInput";
+import PaymentInput from "@/components/PaymentInput";
 import StripeTestCards from "@/components/StripeTestCards";
 
 import { formatAmountForDisplay } from "@/utils/stripe-helpers";
@@ -49,7 +49,7 @@ export default function CheckoutForm(props: CheckoutFormProps): JSX.Element {
     <>
       <form action={formAction}>
         <input type="hidden" name="uiMode" value={props.uiMode} />
-        <CustomDonationInput
+        <PaymentInput
           className="checkout-style"
           name="customDonation"
           min={config.MIN_AMOUNT}
@@ -69,14 +69,14 @@ export default function CheckoutForm(props: CheckoutFormProps): JSX.Element {
           Donate {formatAmountForDisplay(input.customDonation, config.CURRENCY)}
         </button>
       </form>
-      {clientSecret ? (
+      {/* {clientSecret ? (
         <EmbeddedCheckoutProvider
           stripe={getStripe()}
           options={{ clientSecret }}
         >
           <EmbeddedCheckout />
         </EmbeddedCheckoutProvider>
-      ) : null}
+      ) : null} */}
     </>
   );
 }

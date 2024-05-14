@@ -4,9 +4,9 @@
 
 - Stripe Checkout
   - Custom Amount Donation with redirect to Stripe Checkout:
-    - Server Component: [app/donate-with-checkout/page.tsx](app/donate-with-checkout/page.tsx)
+    - Server Component: [app/stripe-checkout/page.tsx](app/stripe-checkout/page.tsx)
     - Server Action: [app/actions/stripe.ts](app/actions/stripe.ts)
-    - Checkout Session 'success' page fetches the Checkout Session object from Stripe: [donate-with-checkout/result/page.tsx](app/donate-with-checkout/result/page.tsx)
+    - Checkout Session 'success' page fetches the Checkout Session object from Stripe: [stripe-checkout/result/page.tsx](app/stripe-checkout/result/page.tsx)
 - Stripe Elements
   - Custom Amount Donation with Stripe Payment Element & PaymentIntents:
     - Server Component: [app/donate-with-elements/page.tsx](app/donate-with-elements/page.tsx)

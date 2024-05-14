@@ -10,7 +10,7 @@ import {
   Elements,
 } from "@stripe/react-stripe-js";
 
-import CustomDonationInput from "./CustomDonationInput";
+import PaymentInput from "./PaymentInput";
 import StripeTestCards from "./StripeTestCards";
 
 import { formatAmountForDisplay } from "@/utils/stripe-helpers";
@@ -93,24 +93,6 @@ function CheckoutForm(): JSX.Element {
         new FormData(e.target as HTMLFormElement),
       );
 
-      // Use your card Element with other Stripe.js APIs
-      const { error: confirmError } = await stripe!.confirmPayment({
-        elements,
-        clientSecret,
-        confirmParams: {
-          return_url: `${window.location.origin}/donate-with-elements/result`,
-          payment_method_data: {
-            billing_details: {
-              name: input.cardholderName,
-            },
-          },
-        },
-      });
-
-      if (confirmError) {
-        setPayment({ status: "error" });
-        setErrorMessage(confirmError.message ?? "An unknown error occurred");
-      }
     } catch (err) {
       const { message } = err as StripeError;
 
@@ -122,7 +104,7 @@ function CheckoutForm(): JSX.Element {
   return (
     <>
       <form onSubmit={handleSubmit}>
-      <CustomDonationInput
+      <PaymentInput
         className="elements-style"
         name="customDonation"
         value={input.customDonation}

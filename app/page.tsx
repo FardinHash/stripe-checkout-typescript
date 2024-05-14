@@ -11,7 +11,7 @@ export default function IndexPage(): JSX.Element {
     <ul className="card-list">
       <li>
         <Link
-          href="/donate-with-checkout"
+          href="/stripe-checkout"
           className="card checkout-style-background"
         >
           <h2 className="bottom">Basic Plan</h2>
@@ -20,7 +20,7 @@ export default function IndexPage(): JSX.Element {
       </li>
       <li>
         <Link
-          href="/donate-with-checkout"
+          href="/stripe-checkout"
           className="card checkout-style-background"
         >
           <h2 className="bottom">Pro Plan</h2>
@@ -29,7 +29,7 @@ export default function IndexPage(): JSX.Element {
       </li>
       <li>
         <Link
-          href="/donate-with-checkout"
+          href="/stripe-checkout"
           className="card elements-style-background"
         >
           <h2 className="bottom">Agency</h2>

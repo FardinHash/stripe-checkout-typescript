@@ -1,6 +1,6 @@
 import { formatAmountForDisplay } from "@/utils/stripe-helpers";
 
-export default function CustomDonationInput({
+export default function PaymentInput({
   name,
   min,
   max,
@@ -36,7 +36,7 @@ export default function CustomDonationInput({
           name="companyName"
           value={companyName}
           onChange={(e) => onChange(e)} // Add onChange handler here
-          required
+          // required
         />
       </label>
       <label>

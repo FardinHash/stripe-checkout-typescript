@@ -1,9 +1,7 @@
 "use server";
 
 import type { Stripe } from "stripe";
-
 import { headers } from "next/headers";
-
 import { CURRENCY } from "@/config";
 import { formatAmountForStripe } from "@/utils/stripe-helpers";
 import { stripe } from "@/lib/stripe";
@@ -16,6 +14,7 @@ export async function createCheckoutSession(
   ) as Stripe.Checkout.SessionCreateParams.UiMode;
 
   const origin: string = headers().get("origin") as string;
+  const couponCode = data.get("couponCode") as string; // New line to get coupon code
 
   const checkoutSession: Stripe.Checkout.Session =
     await stripe.checkout.sessions.create({
@@ -41,6 +40,7 @@ export async function createCheckoutSession(
         cancel_url: `${origin}/stripe-checkout`,
       }),
       ui_mode,
+      discounts: couponCode ? [{ coupon: couponCode }] : undefined, 
     });
 
   return {

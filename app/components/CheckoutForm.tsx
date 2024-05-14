@@ -1,20 +1,12 @@
-"use client";
-
-import type Stripe from "stripe";
+"use client"
 
 import React, { useState } from "react";
-
 import PaymentInput from "@/components/PaymentInput";
 import StripeTestCards from "@/components/StripeTestCards";
-
 import { formatAmountForDisplay } from "@/utils/stripe-helpers";
 import * as config from "@/config";
 import { createCheckoutSession } from "@/actions/stripe";
-import getStripe from "@/utils/get-stripejs";
-import {
-  EmbeddedCheckout,
-  EmbeddedCheckoutProvider,
-} from "@stripe/react-stripe-js";
+import Stripe from "stripe";
 
 interface CheckoutFormProps {
   uiMode: Stripe.Checkout.SessionCreateParams.UiMode;
@@ -22,21 +14,27 @@ interface CheckoutFormProps {
 
 export default function CheckoutForm(props: CheckoutFormProps): JSX.Element {
   const [loading] = useState<boolean>(false);
-  const [input, setInput] = useState<{ customDonation: number }>({
+  const [input, setInput] = useState<{
+    customDonation: number;
+    couponCode: string;
+  }>({
     customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
+    couponCode: "",
   });
   const [clientSecret, setClientSecret] = useState<string | null>(null);
 
-  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (
+    e
+  ) => {
     setInput({
       ...input,
       [e.currentTarget.name]: e.currentTarget.value,
     });
-  };  
+  };
 
   const formAction = async (data: FormData): Promise<void> => {
     const uiMode = data.get(
-      "uiMode",
+      "uiMode"
     ) as Stripe.Checkout.SessionCreateParams.UiMode;
     const { client_secret, url } = await createCheckoutSession(data);
 
@@ -58,15 +56,23 @@ export default function CheckoutForm(props: CheckoutFormProps): JSX.Element {
           currency={config.CURRENCY}
           onChange={handleInputChange}
           value={input.customDonation}
-          companyName={""} 
+          companyName={""}
         />
+        <input
+          type="text"
+          name="couponCode"
+          value={input.couponCode}
+          onChange={handleInputChange}
+          placeholder="Enter coupon code"
+        /> {/* Add Coupon Code Input Field */}
         <StripeTestCards />
         <button
           className="checkout-style-background"
           type="submit"
           disabled={loading}
         >
-          Donate {formatAmountForDisplay(input.customDonation, config.CURRENCY)}
+          Donate{" "}
+          {formatAmountForDisplay(input.customDonation, config.CURRENCY)}
         </button>
       </form>
       {/* {clientSecret ? (

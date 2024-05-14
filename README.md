@@ -9,9 +9,9 @@
     - Checkout Session 'success' page fetches the Checkout Session object from Stripe: [stripe-checkout/result/page.tsx](app/stripe-checkout/result/page.tsx)
 - Stripe Elements [Check master branch]
   - Custom Amount Donation with Stripe Payment Element & PaymentIntents:
-    - Server Component: [app/donate-with-elements/page.tsx](app/donate-with-elements/page.tsx)
+    - Server Component: [app/donate-with-elements/page.tsx](app/stripe-with-elements/page.tsx)
     - Server Action: [app/actions/stripe.ts](app/actions/stripe.ts)
-    - Payment Intent 'success' page (via `returl_url`) fetches the Payment Intent object from Stripe: [donate-with-elements/result/page.tsx](app/donate-with-elements/result/page.tsx)
+    - Payment Intent 'success' page (via `returl_url`) fetches the Payment Intent object from Stripe: [donate-with-elements/result/page.tsx](app/stripe-with-elements/result/page.tsx)
 - Webhook handling for [post-payment events](https://stripe.com/docs/payments/handling-payment-events)
   - Route Handler: [app/api/webhooks/route.ts](app/api/webhooks/route.ts)
 

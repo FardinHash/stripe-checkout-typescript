@@ -7,7 +7,7 @@
     - Server Component: [app/stripe-checkout/page.tsx](app/stripe-checkout/page.tsx)
     - Server Action: [app/actions/stripe.ts](app/actions/stripe.ts)
     - Checkout Session 'success' page fetches the Checkout Session object from Stripe: [stripe-checkout/result/page.tsx](app/stripe-checkout/result/page.tsx)
-- Stripe Elements [Check main branch]
+- Stripe Elements [Check master branch]
   - Custom Amount Donation with Stripe Payment Element & PaymentIntents:
     - Server Component: [app/donate-with-elements/page.tsx](app/donate-with-elements/page.tsx)
     - Server Action: [app/actions/stripe.ts](app/actions/stripe.ts)
